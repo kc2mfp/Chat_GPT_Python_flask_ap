@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHAT GPT Flask App</title>
+  <style>
+    body {
+      background-color: blue;
+    }
+
+    form {
+      display: block;
+      margin: auto;
+      margin-top: 50px;
+      width: 200px;
+    }
+
+    .text-field {
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+      height: 20px;
+    }
+
+    .submit-button {
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+      height: 30px;
+    }
+
+    h1 {
+    text-align: center;
+    color: white;
+    }
+
+    p {
+    background-color: white;
+    border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Carl's Chat GPT Flask App</h1>  
+  <form action="/" method="post">
+    <input type="Question" class="text-field" name="Question" placeholder="Question">
+    <input type="temperature" class="text-field" name="temperature" placeholder="temperature" value=.1>
+    <input type="max_tokens" class="text-field" name="max_tokens" placeholder="max_tokens" value =1024>
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+  <p>{{answer | replace('\n','<br>') | safe}}</p>
+</body>
+</html>
